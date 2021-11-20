@@ -5,6 +5,7 @@ const userController = {
         User.find({})
             .populate({
                 path: 'thoughts',
+                path: 'friends',
                 select: '-__v'
             })
             .select('-__v')
@@ -19,6 +20,7 @@ const userController = {
         User.findOne({ _id: params.id })
             .populate({
                 path: 'thoughts',
+                path: 'friends',
                 select: '-__v'
             })
             .select('-__v')
@@ -63,6 +65,20 @@ const userController = {
                 res.json(dbUserData);
             })
             .catch(err => res.status(400).json(err));
+    },
+    addFriend({ params, body }, res) {
+        User.findOneAndUpdate(
+            { _id: params.userId },
+            { $addToSet: { friends: body } },
+            { new: true}
+        )
+        .then(dbUserData => {
+            if (!dbUserData) {
+                return res.status(404).json({ message: 'No user found with this id!' });
+            }
+            res.json(dbUserData);
+        })
+        .catch(err => res.json(err));
     }
 };
 
