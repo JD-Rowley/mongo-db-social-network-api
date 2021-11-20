@@ -48,13 +48,7 @@ const thoughtController = {
             body,
             { new: true }
         )
-        .then(({ _id }) => {
-            return User.findOneAndUpdate(
-                { _id: params.userId },
-                { $push: { thoughts: _id } },
-                { new: true }
-        )
-            }).then(dbUserData => {
+            .then(dbUserData => {
             if (!dbUserData) {
                 res.status(404).json({ message: 'No users found with this id!' });
                 return;
