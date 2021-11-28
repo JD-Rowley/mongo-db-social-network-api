@@ -25,3 +25,6 @@
   ## Questions
   * GitHub: [jd-rowley](http://github.com/jd-rowley)
   * E-mail: jdrowley1989@gmail.com
+
+  ## Click the image to see a video of this API in action!
+  [![Insomniac Testing](/assets/img/screenshot.JPG)](https://watch.screencastify.com/v/ewfHSjZNd3PPnBCFhz7x)
