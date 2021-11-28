@@ -21,7 +21,7 @@
   ## Contribution Guidelines
   No contributions are accepted at this time.
   ## Testing
-  This app is testing using Insomnia.
+  This app is tested using Insomnia.
   ## Questions
   * GitHub: [jd-rowley](http://github.com/jd-rowley)
   * E-mail: jdrowley1989@gmail.com
